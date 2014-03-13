@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://ptb2.me/flexbox/ -->
+<html class=" js flexbox webkitbox" lang="en" prefix="og: http://ogp.me/ns#" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Flexbox / Flexible Box 布局 CSS 手册 - ptb2.me</title>
+  <meta content="Browser SupportChrome 4.0+, Firefox 2.0+, Safari 1.1+ including all versions of Safari on iOS support flexbox using the July 2009 working draft syntax. These browsers require prefixed flexbox prope..." name="description" property="og:description">
+  <meta content="Flexbox / Flexible Box 布局 CSS 手册" property="og:title">
+  <meta content="article" property="og:type">
+  <meta content="http://ptb2.me/flexbox/" property="og:url">
+  <meta content="summary" name="twitter:card">
+  <meta content="@ptb" name="twitter:creator">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <link href="./style-65c1d75a.css" rel="stylesheet">
+  <link href="http://ptb2.me/subscribe/feed.atom" rel="alternate" type="application/atom+xml">
+  <link href="http://ptb2.me/subscribe/feed.rss" rel="alternate" type="application/rss+xml">
+  <link href="http://microformats.org/profile/hatom" rel="profile">
+  <link href="http://microformats.org/profile/hcard" rel="profile">
+  <style type="text/css">
+  /* line 1, (__TEMPLATE__) */
+  .initial {
+    text-decoration: underline;
+  }
+  </style>
+</head>
+
+<body itemscope="" itemtype="http://www.schema.org/Blog">
+  <header role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <h1><a href="http://ptb2.me/">ptb2.me</a>
+          </h1>
+        </div>
+        <div class="span8">
+          <ul class="topics" role="navigation">
+            <li><a href="http://ptb2.me/code/" itemprop="keywords" rel="tag">Code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <main id="main" role="main">
+    <article class="container hentry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <header class="row">
+        <div class="span6">
+          <ul class="tags" role="navigation">
+            <li><a href="http://ptb2.me/code/" itemprop="keywords" rel="tag">Code</a>
+            </li>
+          </ul>
+        </div>
+        <div class="span6">
+          <span class="author vcard" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <a class="url" href="http://ptb2.me/about/" itemprop="url" rel="author">
+              <span class="fn n" itemprop="name">
+                <span class="given-name" itemprop="givenName">Peter</span>
+                <span class="additional-name" itemprop="additionalName">T.</span>
+                <span class="family-name" itemprop="familyName">Bosse</span>
+                <span class="honorific-suffix" itemprop="honorificSuffix">II</span>
+              </span>
+            </a>
+          </span>
+        </div>
+      </header>
+      <div>
+        <div class="row">
+          <div class="span10 offset1">
+            <h2 class="entry-title" itemprop="headline">Flexbox / Flexible Box 布局 CSS 手册</h2>
+          </div>
+        </div>
+        <div class="entry-content" itemprop="articleBody">
+          <div class="row">
+            <div class="span10 offset1">
+              <h3>浏览器支持</h3>
+              <p>Chrome 4.0+, Firefox 2.0+, Safari 1.1+ 以及所有 iOS 上的 Safari <a href="http://caniuse.com/flexbox">支持 flexbox</a> 的 <a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">July 2009 working draft syntax</a>版本. 这些浏览器需要在 flexbox 属性加上前缀. Chrome 和 Safari 3.0+ (包括 iOS) 需要有在
+                <code>-webkit-</code>前缀, Firefox 需要有
+                <code>-moz-</code>前缀, Safari 1.1 和 2.0 需要有
+                <code>-khtml-</code>前缀.</p>
+              <p>Internet Explorer 10 <a href="http://msdn.microsoft.com/library/ie/hh673531.aspx">支持 flexbox</a> 的 <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">March 2012 working draft syntax</a> 版本, 需要
+                <a href="http://msdn.microsoft.com/library/ie/hh772069.aspx">
+                  <code>-ms-</code>前缀的</a>属性.</p>
+              <p><a href="https://www.google.com/chrome/">Chrome</a> 21+, <a href="http://www.mozilla.org/firefox/">Firefox</a> 20+, <a href="http://nightly.webkit.org/">WebKit Nightly</a>, and <a href="http://www.opera.com/">Opera</a> 12.1+ support flexbox using the <a href="http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/">September 2012 candidate recommendation syntax</a>. Chrome and WebKit Nightly require the
+                <code>-webkit-</code>prefix. Firefox and Opera support the un-prefixed property names.</p>
+              <hr>
+              <h3>Known Issues</h3>
+              <p>According to <a href="http://oli.jp/2011/css3-flexbox/#shrieking-eels">Oli Studholme</a> and <a href="http://the-echoplex.net/flexyboxes/">Pete Boere</a>, there are known issues with several major web browsers and their implementation of flexbox. For example, on Firefox 19.0 and earlier, both percentage widths set on flex items and
+                <code>overflow: hidden</code>are ignored, resulting in the flexbox child expanding when content is larger than the child's set width. Because of these two issues, I've excluded Firefox 19 and earlier from using flexbox with the <a href="http://ptb2.me/flexgrid/">ptb/flexgrid</a> framework.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Flex Containers</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span6">
+              <p>Flexible boxes, also called flex containers, are created by setting the
+                <a href="http://dev.w3.org/csswg/css-flexbox/#flex-containers">
+                  <code>display</code>
+                </a>property on a container element. Properties are listed here in a specific order with the working draft syntaxes first and the current candidate recommendation standard syntax last.</p>
+            </div>
+            <div class="span6" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/display">display</a>:
+                <var title="The element is displayed in its own flex box.">-webkit-box</var>|
+                <var title="The element is displayed inline in its own flex box.">-webkit-inline-box</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/Flexbox">display</a>:
+                <var>-moz-box</var>|
+                <var>-moz-inline-box</var>
+                <br><a href="http://msdn.microsoft.com/library/ie/ms530751.aspx">display</a>:
+                <var title="Specifies a block-level flexible box container.">-ms-flexbox</var>|
+                <var title="Specifies an inline-level flexible box container.">-ms-inline-flexbox</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/display">display</a>:
+                <var title="This value causes an element to generate a block-level flex container box.">-webkit-flex</var>|
+                <var title="This value causes an element to generate a inline-level flex container box.">-webkit-inline-flex</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-containers">display</a>:
+                <var title="This value causes an element to generate a block-level flex container box.">flex</var>|
+                <var title="This value causes an element to generate a inline-level flex container box.">inline-flex</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Main Axis Orientation and Direction</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span3">
+              <p>These properties specify how items are placed in the container, by setting the orientation and direction of the container's main axis.</p>
+            </div>
+            <div class="span9" style="background-color: #fcc; -webkit-align-self: center">
+              <code>
+                <span title="A box may lay out its children either horizontally or vertically."><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-orient">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-orient">box-orient</a>:</span>
+                <var title="The box displays its children along the block axis.">block-axis</var>|
+                <var class="v1" title="The box displays its children from left to right in a horizontal line.">horizontal</var>|
+                <var class="initial" title="The box displays its children along the inline axis.">inline-axis</var>|
+                <var class="v2" title="The box displays its children from stacked from top to bottom vertically.">vertical</var>
+                <br>
+                <span title="This property specifies the direction in which children of a box are displayed."><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-direction">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-direction">box-direction</a>:</span>
+                <var class="initial" title="A box with a computed value of horizontal for box-orient displays its children from left to right. A box with a computed value of vertical displays its children from top to bottom.">normal</var>|
+                <var class="v3" title="A box with a computed value of horizontal for box-orient displays its children from right to left. A box with a computed value of vertical displays its children from bottom to top.">reverse</var>
+                <br>
+                <span title="A box may lay out its children either horizontally or vertically."><a href="https://developer.mozilla.org/docs/CSS/box-orient">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-orient">box-orient</a>:</span>
+                <var title="The box displays its children along the block axis.">block-axis</var>|
+                <var class="v1" title="The box displays its children from left to right in a horizontal line.">horizontal</var>|
+                <var class="initial" title="The box displays its children along the inline axis.">inline-axis</var>|
+                <var class="v2" title="The box displays its children from stacked from top to bottom vertically.">vertical</var>
+                <br>
+                <span title="This property specifies the direction in which children of a box are displayed."><a href="https://developer.mozilla.org/docs/CSS/box-direction">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-direction">box-direction</a>:</span>
+                <var class="initial" title="A box with a computed value of horizontal for box-orient displays its children from left to right. A box with a computed value of vertical displays its children from top to bottom.">normal</var>|
+                <var class="v3" title="A box with a computed value of horizontal for box-orient displays its children from right to left. A box with a computed value of vertical displays its children from bottom to top.">reverse</var>
+                <br>
+                <span title="This property specifies how flexbox items are placed in the flexbox, by setting the direction of the main axis."><a href="http://msdn.microsoft.com/library/ie/jj127299.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-direction">flex-direction</a>:</span>
+                <var class="v2" title="The main axis has the same orientation as the block axis of the current writing mode (the direction that blocks are laid out in).">column</var>|
+                <var title="Same as column, except the main-start and main-end directions are swapped.">
+                  <span class="v2">column</span>-
+                  <span class="v3">reverse</span>
+                </var>|
+                <var class="initial v1" title="The main axis has the same orientation as the inline axis of the current writing mode (the direction that text is laid out in).">row</var>|
+                <var title="Same as row, except the main-start and main-end directions are swapped.">
+                  <span class="v1">row</span>-
+                  <span class="v3">reverse</span>
+                </var>
+                <br>
+                <span title="This property specifies how flex items are placed in the flex container, by setting the direction of the main axis."><a href="https://developer.mozilla.org/docs/CSS/flex-direction">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-direction-property">flex-direction</a>:</span>
+                <var title="The main axis has the same orientation as the block axis of the current writing mode.">column</var>|
+                <var title="Same as column, except the main-start and main-end directions are swapped.">column-reverse</var>|
+                <var class="initial" title="The main axis has the same orientation as the inline axis of the current writing mode.">row</var>|
+                <var title="Same as row, except the main-start and main-end directions are swapped.">row-reverse</var>
+                <br>
+                <span title="This property specifies how flex items are placed in the flex container, by setting the direction of the main axis."><a href="http://www.w3.org/TR/css3-flexbox/#flex-direction-property">flex-direction</a>:</span>
+                <var title="The main axis has the same orientation as the block axis of the current writing mode.">column</var>|
+                <var title="Same as column, except the main-start and main-end directions are swapped.">column-reverse</var>|
+                <var class="initial" title="The main axis has the same orientation as the inline axis of the current writing mode.">row</var>|
+                <var title="Same as row, except the main-start and main-end directions are swapped.">row-reverse</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Single- or Multi-Line and Cross Axis Direction</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span5">
+              <p>These properties control whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.</p>
+            </div>
+            <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
+              <code>
+                <span title="By default a horizontal box will lay out its children in a single row, and a vertical box will lay out its children in a single column."><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-lines">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-lines">box-lines</a>:</span>
+                <var title="The box is allowed to expand to multiple lines (that is, multiple rows or columns) in order to accommodate all of its children">multiple</var>|
+                <var class="initial" title="All elements will be placed in a single row or column, and any elements that do not fit will simply be considered overflow.">single</var>
+                <br>
+                <span title="By default a horizontal box will lay out its children in a single row, and a vertical box will lay out its children in a single column."><a href="https://developer.mozilla.org/docs/CSS/box-lines">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-lines">box-lines</a>:</span>
+                <var title="The box is allowed to expand to multiple lines (that is, multiple rows or columns) in order to accommodate all of its children">multiple</var>|
+                <var class="initial" title="All elements will be placed in a single row or column, and any elements that do not fit will simply be considered overflow.">single</var>
+                <br>
+                <span title="This property controls whether the flexbox is single-line or multi-line, and the direction of the cross axis, which affects the direction new lines are stacked in"><a href="http://msdn.microsoft.com/library/ie/jj127305.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-wrap">flex-wrap</a>:</span>
+                <var class="initial" title="All child elements are displayed in a single row or column.">none</var>|
+                <var title="Child elements are wrapped and displayed in successive, parallel rows or columns.">wrap</var>|
+                <var title="Child elements are wrapped and displayed in successive, parallel rows or columns in reverse order.">wrap-reverse</var>
+                <br>
+                <span title="This property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in."><a href="https://developer.mozilla.org/docs/CSS/flex-wrap">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-wrap-property">flex-wrap</a>:</span>
+                <var class="initial" title="The flex container is single-line. The cross-start direction is equivalent to either the start or before/head direction of the current writing mode, whichever is in the cross axis, and the cross-end direction is the opposite direction of cross-start.">nowrap</var>|
+                <var title="The flex container is multi-line. The cross-start direction is equivalent to either the start or before/head direction of the current writing mode, whichever is in the cross axis, and the cross-end direction is the opposite direction of cross-start.">wrap</var>|
+                <var title="Same as wrap, except the cross-start and cross-end directions are swapped.">wrap-reverse</var>
+                <br>
+                <span title="This property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in."><a href="http://www.w3.org/TR/css3-flexbox/#flex-wrap-property">flex-wrap</a>:</span>
+                <var class="initial" title="The flex container is single-line. The cross-start direction is equivalent to either the start or before/head direction of the current writing mode, whichever is in the cross axis, and the cross-end direction is the opposite direction of cross-start.">nowrap</var>|
+                <var title="The flex container is multi-line. The cross-start direction is equivalent to either the start or before/head direction of the current writing mode, whichever is in the cross axis, and the cross-end direction is the opposite direction of cross-start.">wrap</var>|
+                <var title="Same as wrap, except the cross-start and cross-end directions are swapped.">wrap-reverse</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Direction and Wrap Shorthand Property</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <p>The
+                <code>flex-flow</code>property is a shorthand for setting the
+                <code>flex-direction</code>and
+                <code>flex-wrap</code>properties, which together define the main and cross axes.</p>
+            </div>
+            <div class="span8" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="http://msdn.microsoft.com/library/ie/jj127300.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-flow">flex-flow</a>:
+                <var>&lt;-ms-flex-direction&gt;</var>||
+                <var>&lt;-ms-flex-wrap&gt;</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/flex-flow">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-flow-property">flex-flow</a>:
+                <var>&lt;flex-direction&gt;</var>||
+                <var>&lt;flex-wrap&gt;</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-flow-property">flex-flow</a>:
+                <var>&lt;flex-direction&gt;</var>||
+                <var>&lt;flex-wrap&gt;</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Change Display Order</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span5">
+              <p>Flexbox items are, by default, displayed and laid out in the same order as they appear in the source document. These properties may be used to change this ordering.</p>
+            </div>
+            <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
+              <code>
+                <span><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-ordinal-group">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-ordinal-group">box-ordinal-group</a>:</span>
+                <var class="initial">1</var>|
+                <var>&lt;positive integer&gt;</var>
+                <br>
+                <span><a href="https://developer.mozilla.org/docs/CSS/-moz-box-ordinal-group">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-ordinal-group">box-ordinal-group</a>:</span>
+                <var class="initial">1</var>|
+                <var>&lt;positive integer&gt;</var>
+                <br>
+                <span><a href="http://msdn.microsoft.com/library/ie/jj127303.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-order">flex-order</a>:</span>
+                <var class="initial">0</var>|
+                <var>&lt;integer&gt;</var>
+                <br>
+                <span><a href="https://developer.mozilla.org/docs/CSS/order">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#order-property">order</a>:</span>
+                <var class="initial">0</var>|
+                <var>&lt;integer&gt;</var>
+                <br>
+                <span><a href="http://www.w3.org/TR/css3-flexbox/#order-property">order</a>:</span>
+                <var class="initial">0</var>|
+                <var>&lt;integer&gt;</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Flexibility</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <p>The defining aspect of flex layout is the ability to make the flex items "
+                <code>flex</code>", altering their width or height to fill the available space. This is done with these properties. A flex container distributes free space to its items proportional to their
+                <code>flex-grow</code>factor, or shrinks them to prevent overflow proportional to their
+                <code>flex-shrink</code>factor.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10 offset1" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-flex">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-flex">box-flex</a>:
+                <var class="initial">0.0</var>|
+                <var>&lt;positive floating-point number&gt;</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/-moz-box-flex">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-flex">box-flex</a>:
+                <var class="initial">0.0</var>|
+                <var>&lt;positive floating-point number&gt;</var>
+                <br><a href="http://msdn.microsoft.com/library/ie/jj127297.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility">flex</a>:
+                <var>
+                  <span class="initial">none</span>(0 0 auto)</var>|
+                <br>&nbsp; [ [
+                <var>&lt;positive-flex:
+                  <span class="initial">1</span>&gt;</var>
+                <var>&lt;negative-flex:
+                  <span class="initial">0</span>&gt;</var>? ] ||
+                <var>&lt;preferred-size:
+                  <span class="initial">0px</span>&gt; ]</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/flex-grow">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-grow-property">flex-grow</a>:
+                <var class="initial">0</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#numbers">number</a>&gt;</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/flex-shrink">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-shrink-property">flex-shrink</a>:
+                <var class="initial">1</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#numbers">number</a>&gt;</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/flex-basis">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-basis-property">flex-basis</a>:
+                <var class="initial">auto</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#lengths">length</a>&gt;</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/flex">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#flex-property">flex</a>:
+                <var>none (0 0 auto)</var>|
+                <var>
+                  <span class="initial">initial</span>(0 1 auto)</var>|
+                <var>auto (1 1 auto)</var>|
+                <br>&nbsp; [
+                <var>&lt;flex-grow:
+                  <span class="initial">1</span>&gt;</var>
+                <var>&lt;flex-shrink:
+                  <span class="initial">1</span>&gt;</var>? ||
+                <var>&lt;flex-basis:
+                  <span class="initial">0</span>&gt; ]</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-grow-property">flex-grow</a>:
+                <var class="initial">0</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#numbers">number</a>&gt;</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-shrink-property">flex-shrink</a>:
+                <var class="initial">1</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#numbers">number</a>&gt;</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-basis-property">flex-basis</a>:
+                <var class="initial">auto</var>|
+                <var>&lt;positive <a href="http://www.w3.org/TR/css3-values/#lengths">length</a>&gt;</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#flex-property">flex</a>:
+                <var>none (0 0 auto)</var>|
+                <var>
+                  <span class="initial">initial</span>(0 1 auto)</var>|
+                <var>auto (1 1 auto)</var>|
+                <br>&nbsp; [
+                <var>&lt;flex-grow:
+                  <span class="initial">1</span>&gt;</var>
+                <var>&lt;flex-shrink:
+                  <span class="initial">1</span>&gt;</var>? ||
+                <var>&lt;flex-basis:
+                  <span class="initial">0</span>&gt; ]</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Main Axis Alignment and Extra Space Distribution</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span5">
+              <p>These properties align flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved.</p>
+            </div>
+            <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-pack">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-pack">box-pack</a>:
+                <var>center</var>|
+                <var>end</var>|
+                <var>justify</var>|
+                <var class="initial">start</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/-moz-box-pack">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-pack">box-pack</a>:
+                <var>center</var>|
+                <var>end</var>|
+                <var>justify</var>|
+                <var class="initial">start</var>
+                <br><a href="http://msdn.microsoft.com/library/ie/jj127304.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-pack">flex-pack</a>:
+                <var>center</var>|
+                <var>end</var>|
+                <var>justify</var>|
+                <var class="initial">start</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/justify-content">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#justify-content-property">justify-content</a>:
+                <var>center</var>|
+                <var>flex-end</var>|
+                <br>&nbsp;
+                <var class="initial">flex-start</var>|
+                <var>space-around</var>|
+                <var>space-between</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#justify-content-property">justify-content</a>:
+                <var>center</var>|
+                <var>flex-end</var>|
+                <br>&nbsp;
+                <var class="initial">flex-start</var>|
+                <var>space-around</var>|
+                <var>space-between</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Cross Axis Alignment</h3>
+              <p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to the previous section but in the perpendicular direction. These properties are applied to the flex container.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10 offset1" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-align">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-align">box-align</a>:
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>end</var>|
+                <var>start</var>|
+                <var class="initial">stretch</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/-moz-box-align">-moz-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-align">box-align</a>:
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>end</var>|
+                <var>start</var>|
+                <var class="initial">stretch</var>
+                <br><a href="http://msdn.microsoft.com/library/ie/jj127298.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-align">flex-align</a>:
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>end</var>|
+                <var>start</var>|
+                <var class="initial">stretch</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/align-items">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">align-items</a>:
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>flex-end</var>|
+                <var>flex-start</var>|
+                <var class="initial">stretch</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">align-items</a>:
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>flex-end</var>|
+                <var>flex-start</var>|
+                <var class="initial">stretch</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <p>These properties also affect alignment in the cross axis of the current line of the flex container, but these properties are applied to the
+                <em>items inside the flex container</em>to override the container property.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span11 offset1" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="http://msdn.microsoft.com/library/ie/jj127301.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-align">flex-item-align</a>:
+                <var class="initial">auto</var>|
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>end</var>|
+                <var>start</var>|
+                <var>stretch</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/align-self">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">align-self</a>:
+                <var class="initial">auto</var>|
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>flex-end</var>|
+                <var>flex-start</var>|
+                <var>stretch</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">align-self</a>:
+                <var class="initial">auto</var>|
+                <var>baseline</var>|
+                <var>center</var>|
+                <var>flex-end</var>|
+                <var>flex-start</var>|
+                <var>stretch</var>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <h3>Cross Axis Extra Space Distribution</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <p>These properties align a flex container's lines within the flex container when there is extra space in the cross-axis, similar to how
+                <code>justify-content</code>and
+                <code>box/flex-pack</code>aligns individual items within the main-axis. Note, this property has no effect when the flexbox has only a single line.</p>
+            </div>
+            <div class="span8" style="background-color: #fcc; -webkit-align-self: center">
+              <code><a href="http://msdn.microsoft.com/library/ie/jj127302.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-line-pack">flex-line-pack</a>:
+                <var>center</var>|
+                <var>distribute</var>|
+                <br>&nbsp;
+                <var>end</var>|
+                <var>justify</var>|
+                <var>start</var>|
+                <var class="initial">stretch</var>
+                <br><a href="https://developer.mozilla.org/docs/CSS/align-content">-webkit-</a><a href="http://www.w3.org/TR/css3-flexbox/#align-content-property">align-content</a>:
+                <var>center</var>|
+                <var>flex-end</var>|
+                <br>&nbsp;
+                <var>flex-start</var>|
+                <var>space-around</var>|
+                <var>space-between</var>|
+                <var class="initial">stretch</var>
+                <br><a href="http://www.w3.org/TR/css3-flexbox/#align-content-property">align-content</a>:
+                <var>center</var>|
+                <var>flex-end</var>|
+                <var>flex-start</var>|
+                <br>&nbsp;
+                <var>space-around</var>|
+                <var>space-between</var>|
+                <var class="initial">stretch</var>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <hr>
+    <nav aria-labelledby="pagination" class="pages" role="navigation">
+      <h3 id="pagination">Page Navigation</h3>
+      <div class="container">
+        <div class="row">
+          <div class="prev span5"><a href="http://ptb2.me/flexgrid/" rel="prev">ptb/flexgrid: a flexbox-based CSS grid in 3.6k</a>
+          </div>
+          <div class="page span2"></div>
+          <div class="next span5"></div>
+        </div>
+      </div>
+    </nav>
+    <hr>
+  </main>
+  <footer class="author vcard" itemprop="author" itemscope="" itemtype="http://schema.org/Person" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <p class="copyright">©&nbsp;
+            <time datetime="2014">2014</time>
+            <span class="fn n" itemprop="name" rel="author">
+              <span class="given-name" itemprop="givenName">Peter</span>
+              <span class="additional-name" itemprop="additionalName">T.</span>
+              <span class="family-name" itemprop="familyName">Bosse</span>
+              <span class="honorific-suffix" itemprop="honorificSuffix">II</span>
+            </span>,
+            <span class="role" itemprop="jobTitle">freelance web developer</span>for <a class="org" href="http://ptb2.me/" itemprop="affiliation">ptb2.me</a>. <a href="http://creativecommons.org/licenses/by-sa/3.0/us/" rel="license" title="Creative Commons Attribution-Share Alike 3.0 U.S. License">Some rights reserved</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script defer>
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-5357793-4', 'ptb2.me');
+  ga('send', 'pageview');
+  </script>
+</body>
+
+</html>
