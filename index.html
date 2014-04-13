@@ -83,12 +83,12 @@
               <p>Internet Explorer 10 <a href="http://msdn.microsoft.com/library/ie/hh673531.aspx">支持 flexbox</a> 的 <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">March 2012 working draft syntax</a> 版本, 需要
                 <a href="http://msdn.microsoft.com/library/ie/hh772069.aspx">
                   <code>-ms-</code>前缀的</a>属性.</p>
-              <p><a href="https://www.google.com/chrome/">Chrome</a> 21+, <a href="http://www.mozilla.org/firefox/">Firefox</a> 20+, <a href="http://nightly.webkit.org/">WebKit Nightly</a>, and <a href="http://www.opera.com/">Opera</a> 12.1+ support flexbox using the <a href="http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/">September 2012 candidate recommendation syntax</a>. Chrome and WebKit Nightly require the
-                <code>-webkit-</code>prefix. Firefox and Opera support the un-prefixed property names.</p>
+              <p><a href="https://www.google.com/chrome/">Chrome</a> 21+, <a href="http://www.mozilla.org/firefox/">Firefox</a> 20+, <a href="http://nightly.webkit.org/">WebKit Nightly</a>, and <a href="http://www.opera.com/">Opera</a> 12.1+ 支持 flexbox 的 <a href="http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/">September 2012 candidate recommendation syntax</a> 版本. Chrome 和 WebKit Nightly 需要有
+                <code>-webkit-</code> 前缀. Firefox 和 Opera 支持无前缀的属性.</p>
               <hr>
-              <h3>Known Issues</h3>
-              <p>According to <a href="http://oli.jp/2011/css3-flexbox/#shrieking-eels">Oli Studholme</a> and <a href="http://the-echoplex.net/flexyboxes/">Pete Boere</a>, there are known issues with several major web browsers and their implementation of flexbox. For example, on Firefox 19.0 and earlier, both percentage widths set on flex items and
-                <code>overflow: hidden</code>are ignored, resulting in the flexbox child expanding when content is larger than the child's set width. Because of these two issues, I've excluded Firefox 19 and earlier from using flexbox with the <a href="http://ptb2.me/flexgrid/">ptb/flexgrid</a> framework.</p>
+              <h3>已知的 issue</h3>
+              <p>根据 <a href="http://oli.jp/2011/css3-flexbox/#shrieking-eels">Oli Studholme</a> 和 <a href="http://the-echoplex.net/flexyboxes/">Pete Boere</a>, 已经有一些关于一些主流浏览器和他们的 flexbox 实现的 issue. 比如, Firefox 19.0 和早期的版本, 设置在 flex item 的百分比 width 和 <code>overflow: hidden</code> 将会被忽略,
+              结果是当内容比 child 设置的 width 大时 flexbox child 会撑开. 出于这两个原因, I've excluded Firefox 19 and earlier from using flexbox with the <a href="http://ptb2.me/flexgrid/">ptb/flexgrid</a> framework.</p>
             </div>
           </div>
           <div class="row">
@@ -98,15 +98,15 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Flex Containers</h3>
+              <h3>Flex 容器</h3>
             </div>
           </div>
           <div class="row">
             <div class="span6">
-              <p>Flexible boxes, also called flex containers, are created by setting the
+              <p>Flexible boxes, 也叫做 flex 容器, 通过在容器元素上设置
                 <a href="http://dev.w3.org/csswg/css-flexbox/#flex-containers">
                   <code>display</code>
-                </a>property on a container element. Properties are listed here in a specific order with the working draft syntaxes first and the current candidate recommendation standard syntax last.</p>
+                </a>属性来创建. 属性被排列的特定的顺序, 当前草案的语法在前, 各个厂商推荐的语法放在最后.</p>
             </div>
             <div class="span6" style="background-color: #fcc; -webkit-align-self: center">
               <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/display">display</a>:
@@ -134,12 +134,12 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Main Axis Orientation and Direction</h3>
+              <h3>主轴线朝向和方向</h3>
             </div>
           </div>
           <div class="row">
             <div class="span3">
-              <p>These properties specify how items are placed in the container, by setting the orientation and direction of the container's main axis.</p>
+              <p>这些属性通过设置容器主轴线的朝向和方向, 指定了 items 在容器里怎样排放.</p>
             </div>
             <div class="span9" style="background-color: #fcc; -webkit-align-self: center">
               <code>
@@ -196,12 +196,12 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Single- or Multi-Line and Cross Axis Direction</h3>
+              <h3>单行或者多行与轴线正交的方向</h3>
             </div>
           </div>
           <div class="row">
             <div class="span5">
-              <p>These properties control whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.</p>
+              <p>这些属性控制着 flex 容器是单行还是多行, 和轴线正交的方向, 确定了在新的行里陈列的方向.</p>
             </div>
             <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
               <code>
@@ -237,15 +237,15 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Direction and Wrap Shorthand Property</h3>
+              <h3>direction 和 wrap 的简记的属性</h3>
             </div>
           </div>
           <div class="row">
             <div class="span4">
               <p>The
-                <code>flex-flow</code>property is a shorthand for setting the
-                <code>flex-direction</code>and
-                <code>flex-wrap</code>properties, which together define the main and cross axes.</p>
+                <code>flex-flow</code> 属性是
+                <code>flex-direction</code> 和
+                <code>flex-wrap</code> 属性的简写, 同时定义了主轴和正交轴(main and cross axes).</p>
             </div>
             <div class="span8" style="background-color: #fcc; -webkit-align-self: center">
               <code><a href="http://msdn.microsoft.com/library/ie/jj127300.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-flow">flex-flow</a>:
@@ -267,12 +267,12 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Change Display Order</h3>
+              <h3>改变显示顺序</h3>
             </div>
           </div>
           <div class="row">
             <div class="span5">
-              <p>Flexbox items are, by default, displayed and laid out in the same order as they appear in the source document. These properties may be used to change this ordering.</p>
+              <p>flexbox 元素默认按照源代码中出现的顺序显示和布局. 这个元素可以用来改变这个顺序.</p>
             </div>
             <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
               <code>
@@ -305,15 +305,17 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Flexibility</h3>
+              <h3>适应性(flexibility)</h3>
             </div>
           </div>
           <div class="row">
             <div class="span12">
-              <p>The defining aspect of flex layout is the ability to make the flex items "
-                <code>flex</code>", altering their width or height to fill the available space. This is done with these properties. A flex container distributes free space to its items proportional to their
-                <code>flex-grow</code>factor, or shrinks them to prevent overflow proportional to their
-                <code>flex-shrink</code>factor.</p>
+              <p>flex 布局定义的方面是给予 flex 元素具有适应性和灵活性(flex),
+              根据可用的空间来改变宽度或者高度. 这些功能通过这些属性实现.
+              flex 容器把空闲的空间分配给元素以便和
+                <code>flex-grow</code> 因子成比例,
+                或者收缩元素防止他们超过
+                <code>flex-shrink</code> 因子的比例.</p>
             </div>
           </div>
           <div class="row">
@@ -386,12 +388,13 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Main Axis Alignment and Extra Space Distribution</h3>
+              <h3>主轴的对齐和剩余空间的分配</h3>
             </div>
           </div>
           <div class="row">
             <div class="span5">
-              <p>These properties align flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved.</p>
+              <p>这些元素将 flex 元素根据 flex 容器当前的一行来在主轴上对齐.
+              这个步骤将在所有适应性的长度和自动设置 margin 解析完成之后进行.</p>
             </div>
             <div class="span7" style="background-color: #fcc; -webkit-align-self: center">
               <code><a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-pack">-webkit-</a><a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-pack">box-pack</a>:
@@ -433,8 +436,9 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Cross Axis Alignment</h3>
-              <p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to the previous section but in the perpendicular direction. These properties are applied to the flex container.</p>
+              <h3>正交轴(cross Axis)的对齐</h3>
+              <p>flex 元素可以根据 flex 容器当前行的正交轴进行对齐, 和上一节类似但作用在与之正交的方向上.
+              这些属性作用在 flex 容器上.</p>
             </div>
           </div>
           <div class="row">
@@ -474,8 +478,8 @@
           </div>
           <div class="row">
             <div class="span12">
-              <p>These properties also affect alignment in the cross axis of the current line of the flex container, but these properties are applied to the
-                <em>items inside the flex container</em>to override the container property.</p>
+              <p>下面这些属性也会影响 flex 容器正交轴上当前行的对齐, 但是这些属性是作用在
+                <em>flex 容器内部的元素</em>, 可以覆盖 flex 容器的属性.</p>
             </div>
           </div>
           <div class="row">
@@ -511,14 +515,15 @@
           </div>
           <div class="row">
             <div class="span12">
-              <h3>Cross Axis Extra Space Distribution</h3>
+              <h3>正交轴(cross Axis)剩余空间分配</h3>
             </div>
           </div>
           <div class="row">
             <div class="span4">
-              <p>These properties align a flex container's lines within the flex container when there is extra space in the cross-axis, similar to how
-                <code>justify-content</code>and
-                <code>box/flex-pack</code>aligns individual items within the main-axis. Note, this property has no effect when the flexbox has only a single line.</p>
+              <p>这些属性在正交方向有剩余空间的情况下将 flex 容器里的多个行进行对齐, 类似于
+                <code>justify-content</code> 和
+                <code>box/flex-pack</code> 在主轴方向对单个元素进行的对齐.
+                注意, 这些属性在 flexbox 内容只有一行时不会生效.</p>
             </div>
             <div class="span8" style="background-color: #fcc; -webkit-align-self: center">
               <code><a href="http://msdn.microsoft.com/library/ie/jj127302.aspx">-ms-</a><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-line-pack">flex-line-pack</a>:
